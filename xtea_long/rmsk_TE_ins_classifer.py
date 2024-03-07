@@ -442,9 +442,9 @@ class SVAClassifier():#
                     continue
 
                 s_id = fields[4]  # in format: HG02106_chr6_24648990
-                tmp_fields = s_id.split("_")
-                if len(tmp_fields) > 3:  # skip those duplicated ones (like HG02106_chr6_24648990_1)
-                    continue
+                #tmp_fields = s_id.split("_")
+                #if len(tmp_fields) > 3:  # skip those duplicated ones (like HG02106_chr6_24648990_1)
+                #    continue
                 start_pos = int(fields[5])
                 end_pos = int(fields[6])
                 i_seq_dist_from_end = int(fields[7][1:-1])
@@ -1201,9 +1201,9 @@ class SVAClassifier():#
         if b_has_sva==False:
             return None, None, None, i_sva_size, t_ins_sine_r
         b_ambigous_type, i_sva_size=self.is_ambigous_sub_type(l_segmts)
-        if b_ambigous_type==True:
-            print(s_id, l_segmts)
-            return None, None, self.TYPE_AMBIGOUS, i_sva_size, t_ins_sine_r
+        #if b_ambigous_type==True:
+        #    print(s_id, l_segmts)
+        #    return None, None, self.TYPE_AMBIGOUS, i_sva_size, t_ins_sine_r
 
         rslt_rcd=None
         pos_rcd=None
@@ -1274,8 +1274,8 @@ class TEClassifier():
                     continue
                 tmp_fields = s_id.split(self.SEPARATOR)
 ####change to 4 temporarily
-                if len(tmp_fields) > 3:  # skip those duplicated ones (like HG02106_chr6_24648990_1)
-                    continue
+                #if len(tmp_fields) > 3:  # skip those duplicated ones (like HG02106_chr6_24648990_1)
+                #    continue
                 start_pos = int(fields[5])
                 end_pos = int(fields[6])
                 i_seq_dist_from_end = int(fields[7][1:-1])
