@@ -1336,12 +1336,12 @@ class TEClassifier():
                         continue
                     chrm=s_id_fields[0]
                     pos=int(s_id_fields[1])
-                else:#in format: HG02106_chr6_24648990
+                else:#in format: optionalinfo_chrom_pos
                     s_id_fields = s_id.split(self.SEPARATOR)
-                    if len(s_id_fields) < 3:
+                    if len(s_id_fields) < 2:
                         continue
-                    chrm = s_id_fields[1]
-                    pos = int(s_id_fields[2])
+                    chrm = s_id_fields[-2]
+                    pos = int(s_id_fields[-1])
                 if chrm not in m_sites:
                     m_sites[chrm]={}
                 i_start=pos-global_values.NEARBY_REGION
